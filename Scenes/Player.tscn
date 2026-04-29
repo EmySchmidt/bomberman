@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://xrji0jeoirvw"]
+[gd_scene load_steps=24 format=3 uid="uid://xrji0jeoirvw"]
 
 [ext_resource type="Script" uid="uid://blvsdm8o07jg8" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://boqqaj2rg4n14" path="res://Assets/Sprites.png" id="1_rpqav"]
@@ -168,16 +168,15 @@ animations = [{
 radius = 6.0
 height = 14.0
 
-[node name="jogador" type="CharacterBody2D" unique_id=689995989]
+[node name="jogador" type="CharacterBody2D"]
 
-[node name="Player" type="Area2D" parent="." unique_id=972953581]
+[node name="Player" type="Area2D" parent="."]
 script = ExtResource("1_kyqiw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1718233907]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hlom6")
-animation = &"walk_down"
-frame_progress = 0.9958047
+animation = &"walk_right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=732993534]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_x8oxr")
