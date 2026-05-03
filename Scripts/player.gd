@@ -5,14 +5,14 @@ class_name Player
 var movement: Vector2 = Vector2.ZERO
 @export var movement_speed: float = 75
 @onready  var sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-
-func _ready() -> void:
-	pass 
+@onready var raycasts:Raycasts = $"../Raycasts"
 
 func _process(delta: float) -> void:
+	
+	
+	
 	position += movement * delta * movement_speed
-
+	
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("right"):
 		movement = Vector2.RIGHT
