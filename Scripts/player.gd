@@ -33,3 +33,6 @@ func _input(event: InputEvent) -> void:
 	else:
 		movement = Vector2.ZERO
 		sprite.stop()
+
+func die():
+	print ("die")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://by36hg4b0kq01"]
+
+[ext_resource type="Script" uid="uid://bewcweku2mcxu" path="res://Scripts/Centralexplosion.gd" id="1_e0430"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5s3xp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjvyu"]
+
+[node name="EXPLOSION" type="Area2D"]
+script = ExtResource("1_e0430")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5s3xp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yjvyu")
+
+[node name="Raycast" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Raycast"]
+
+[node name="raycastcima" type="RayCast2D" parent="Raycast"]
+
+[node name="raycastdireita" type="RayCast2D" parent="Raycast/raycastcima"]
+
+[node name="raycastbaixo" type="RayCast2D" parent="Raycast/raycastcima/raycastdireita"]
+
+[node name="raycastesquerda" type="RayCast2D" parent="Raycast/raycastcima/raycastdireita/raycastbaixo"]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
