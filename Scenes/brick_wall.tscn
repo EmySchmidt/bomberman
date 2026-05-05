@@ -62,7 +62,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"destroy",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14a2j"]
@@ -74,8 +74,8 @@ script = ExtResource("1_u1bwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pu6sc")
+animation = &"destroy"
 autoplay = "default"
-frame_progress = 0.6198101
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_14a2j")
