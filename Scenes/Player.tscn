@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://xrji0jeoirvw"]
+[gd_scene load_steps=26 format=3 uid="uid://xrji0jeoirvw"]
 
 [ext_resource type="Script" uid="uid://blvsdm8o07jg8" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://boqqaj2rg4n14" path="res://Assets/Sprites.png" id="1_rpqav"]
@@ -105,9 +105,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xse76")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -170,81 +170,81 @@ animations = [{
 radius = 6.0
 height = 14.0
 
-[node name="jogador" type="CharacterBody2D" unique_id=251952786]
+[node name="jogador" type="CharacterBody2D"]
 
-[node name="Player" type="Area2D" parent="." unique_id=1153759632]
+[node name="Player" type="Area2D" parent="."]
 script = ExtResource("1_kyqiw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2071323057]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hlom6")
-animation = &"walk_down"
+animation = &"die"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1429462378]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_x8oxr")
 
-[node name="Raycasts" type="Node2D" parent="Player" unique_id=642612021]
+[node name="Raycasts" type="Node2D" parent="Player"]
 script = ExtResource("3_gntrk")
 
-[node name="Horizontal" type="Node2D" parent="Player/Raycasts" unique_id=1624891402]
+[node name="Horizontal" type="Node2D" parent="Player/Raycasts"]
 
-[node name="Left" type="Node2D" parent="Player/Raycasts/Horizontal" unique_id=1514635588]
+[node name="Left" type="Node2D" parent="Player/Raycasts/Horizontal"]
 
-[node name="LeftHorizontalBottom" type="RayCast2D" parent="Player/Raycasts/Horizontal/Left" unique_id=891012275]
+[node name="LeftHorizontalBottom" type="RayCast2D" parent="Player/Raycasts/Horizontal/Left"]
 position = Vector2(-2, 6)
 target_position = Vector2(-2, 0)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="LeftHorizontalTop" type="RayCast2D" parent="Player/Raycasts/Horizontal/Left" unique_id=35643254]
+[node name="LeftHorizontalTop" type="RayCast2D" parent="Player/Raycasts/Horizontal/Left"]
 position = Vector2(-2, -6)
 target_position = Vector2(-2, 0)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="Right" type="Node2D" parent="Player/Raycasts/Horizontal" unique_id=425212067]
+[node name="Right" type="Node2D" parent="Player/Raycasts/Horizontal"]
 
-[node name="RightHorizontalBottom" type="RayCast2D" parent="Player/Raycasts/Horizontal/Right" unique_id=408031921]
+[node name="RightHorizontalBottom" type="RayCast2D" parent="Player/Raycasts/Horizontal/Right"]
 position = Vector2(2, 6)
 target_position = Vector2(2, 0)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="RigthHorizontalTop" type="RayCast2D" parent="Player/Raycasts/Horizontal/Right" unique_id=1787803541]
+[node name="RigthHorizontalTop" type="RayCast2D" parent="Player/Raycasts/Horizontal/Right"]
 position = Vector2(2, -6)
 target_position = Vector2(2, 0)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="Vertical" type="Node2D" parent="Player/Raycasts" unique_id=292984223]
+[node name="Vertical" type="Node2D" parent="Player/Raycasts"]
 
-[node name="Top" type="Node2D" parent="Player/Raycasts/Vertical" unique_id=218018260]
+[node name="Top" type="Node2D" parent="Player/Raycasts/Vertical"]
 
-[node name="TopVerticalRight" type="RayCast2D" parent="Player/Raycasts/Vertical/Top" unique_id=82186458]
+[node name="TopVerticalRight" type="RayCast2D" parent="Player/Raycasts/Vertical/Top"]
 position = Vector2(3, -6)
 target_position = Vector2(0, -2)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="TopVerticalLeft" type="RayCast2D" parent="Player/Raycasts/Vertical/Top" unique_id=1877482865]
+[node name="TopVerticalLeft" type="RayCast2D" parent="Player/Raycasts/Vertical/Top"]
 position = Vector2(-3, -6)
 target_position = Vector2(0, -2)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="Bottom" type="Node2D" parent="Player/Raycasts/Vertical" unique_id=531671571]
+[node name="Bottom" type="Node2D" parent="Player/Raycasts/Vertical"]
 
-[node name="BottomVerticalRight" type="RayCast2D" parent="Player/Raycasts/Vertical/Bottom" unique_id=1100973395]
+[node name="BottomVerticalRight" type="RayCast2D" parent="Player/Raycasts/Vertical/Bottom"]
 position = Vector2(2, 6)
 target_position = Vector2(0, 2)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="BottomVerticalLeft" type="RayCast2D" parent="Player/Raycasts/Vertical/Bottom" unique_id=1326865760]
+[node name="BottomVerticalLeft" type="RayCast2D" parent="Player/Raycasts/Vertical/Bottom"]
 position = Vector2(-2, 6)
 target_position = Vector2(0, 2)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="BombPlacementSystem" type="Node" parent="Player" unique_id=164952238]
+[node name="BombPlacementSystem" type="Node" parent="Player"]
 script = ExtResource("4_dewec")

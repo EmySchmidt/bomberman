@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy2fcaxbhpyv6"]
+[gd_scene load_steps=13 format=3 uid="uid://cy2fcaxbhpyv6"]
 
 [ext_resource type="Texture2D" uid="uid://boqqaj2rg4n14" path="res://Assets/Sprites.png" id="1_22frh"]
 [ext_resource type="Script" uid="uid://eoml5lo0am7n" path="res://Scripts/brick_wall.gd" id="1_u1bwb"]
+[ext_resource type="Script" uid="uid://gxe2c30r25x" path="res://Scripts/PowerUpres.gd" id="2_pu6sc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1bwb"]
 atlas = ExtResource("1_22frh")
@@ -71,6 +72,7 @@ size = Vector2(16, 16)
 [node name="BrickWall" type="Area2D"]
 collision_layer = 5
 script = ExtResource("1_u1bwb")
+power_up_res = ExtResource("2_pu6sc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pu6sc")

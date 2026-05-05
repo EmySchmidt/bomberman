@@ -3,6 +3,7 @@ extends Area2D
 class_name Player
 
 var movement: Vector2 = Vector2.ZERO
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var movement_speed: float = 75
 @onready  var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var raycasts = $Raycasts
@@ -35,4 +36,10 @@ func _input(_event: InputEvent) -> void:
 		sprite.stop()
 		
 func die():
-	print ("die")
+	animated_sprite_2d.play("die")
+	movement = Vector2.ZERO
+	set_process_input(false)
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is PowerUp:
+		area.queue_free()
