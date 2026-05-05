@@ -10,13 +10,7 @@ const POWER_UP_SCENE = preload("res://Scenes/powersup.tscn")
 
 func destroy():
 	animbrick.play("destroy")
-	
-func on_animated_sprite_2d_animation_finished() -> void:
+
+func _on_animated_sprite_2d_animation_finished() -> void:
 	if animbrick.animation == "destroy":
 		queue_free()
-		
-func spawn_power_up():
-	var power_up = POWER_UP_SCENE.instantiate()
-	power_up.global_position = global_position
-	get_tree().root.add_child(power_up)
-	power_up.init(power_up_res)

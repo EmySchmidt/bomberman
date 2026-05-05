@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bs5qn4rwttlvi"]
 
-[ext_resource type="Script" uid="uid://ccsd6kycankf8" path="res://Scenes/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Script" uid="uid://ccsd6kycankf8" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://boqqaj2rg4n14" path="res://Assets/Sprites.png" id="1_hghv2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ghaa6")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8uf12")
 }],
-"loop": true,
+"loop": false,
 "name": &"Moviment",
 "speed": 5.0
 }]
@@ -82,10 +82,8 @@ script = ExtResource("1_1f0kj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_po0sg")
-animation = &"Moviment"
+animation = &"Death"
 autoplay = "Moviment"
-frame = 1
-frame_progress = 0.8161711
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, -1.5)

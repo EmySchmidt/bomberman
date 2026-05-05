@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dlkouw8n3gafh"]
+[gd_scene load_steps=9 format=3 uid="uid://dlkouw8n3gafh"]
 
 [ext_resource type="Script" uid="uid://blusxij8wiail" path="res://Scripts/bomb.gd" id="1_kdyat"]
 [ext_resource type="Texture2D" uid="uid://boqqaj2rg4n14" path="res://Assets/Sprites.png" id="2_2fiif"]
@@ -46,20 +46,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="bomb" type="Area2D" unique_id=1994414083]
+[node name="bomb" type="Area2D"]
 script = ExtResource("1_kdyat")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=222989240]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cec0p")
 autoplay = "default"
 frame = 4
 frame_progress = 0.83619636
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273978118]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="Timer" type="Timer" parent="." unique_id=992415616]
+[node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 autostart = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -12,3 +12,7 @@ func _on_timer_timeout() -> void:
 	explosion.size = explosion_size
 	get_tree().root.add_child(explosion)
 	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
