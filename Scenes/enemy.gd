@@ -77,12 +77,12 @@ func change_sprite_direction(new_direction: Vector2):
 		animated_sprite_2d.scale.x = sign(new_direction.x)
 
 func die():
-	animated_sprite_2d.play("die")
+	animated_sprite_2d.play("Death")
 	set_physics_process(false)
 	speed = 0
 	direction = Vector2.ZERO
 	set_collision_mask_value(1, false)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite_2d.animation == "die":
+	if animated_sprite_2d.animation == "Death":
 		queue_free()
