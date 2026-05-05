@@ -26,5 +26,3 @@ shape = SubResource("RectangleShape2D_yjvyu")
 [node name="raycastbaixo" type="RayCast2D" parent="Raycast/raycastcima/raycastdireita"]
 
 [node name="raycastesquerda" type="RayCast2D" parent="Raycast/raycastcima/raycastdireita/raycastbaixo"]
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
