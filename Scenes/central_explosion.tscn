@@ -34,9 +34,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_42ec7")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqtbe"]
@@ -50,7 +50,8 @@ script = ExtResource("1_bkhx2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6q18y")
 autoplay = "default"
-frame_progress = 0.3690113
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aqtbe")

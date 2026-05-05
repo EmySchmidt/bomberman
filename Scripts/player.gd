@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 		return
 	position += movement * delta * movement_speed
 	
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("right"):
 		movement = Vector2.RIGHT
 		sprite.play("walk_right")
