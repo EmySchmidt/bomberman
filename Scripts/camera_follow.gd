@@ -9,3 +9,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	position.x = node_to_follow.position.x + inicial_x
+
+
+func _on_enemy_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_enemy_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

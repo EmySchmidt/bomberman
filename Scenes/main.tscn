@@ -259,14 +259,23 @@ node_to_follow = NodePath("../jogador")
 [node name="Bricks" type="Node" parent="."]
 
 [node name="BrickWall" parent="Bricks" instance=ExtResource("4_jjvhh")]
-position = Vector2(64, 0)
+position = Vector2(64, 15)
 
 [node name="BrickWall2" parent="Bricks" instance=ExtResource("4_jjvhh")]
-position = Vector2(96, 32)
+position = Vector2(96, 16)
 
 [node name="BrickWall3" parent="Bricks" instance=ExtResource("4_jjvhh")]
-position = Vector2(128, 32)
+position = Vector2(128, 0)
 
 [node name="Enemy" parent="." instance=ExtResource("5_21xkr")]
-position = Vector2(128, 0)
+position = Vector2(97, 3)
 script = ExtResource("6_6bp64")
+
+[node name="Enemy2" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(190, 2)
+script = ExtResource("6_6bp64")
+
+[connection signal="area_entered" from="Enemy" to="Enemy" method="_on_area_entered"]
+[connection signal="body_entered" from="Enemy" to="Enemy" method="_on_body_entered"]
+[connection signal="area_entered" from="Enemy2" to="Enemy2" method="_on_area_entered"]
+[connection signal="body_entered" from="Enemy2" to="Enemy2" method="_on_body_entered"]

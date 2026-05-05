@@ -21,7 +21,7 @@ var animation_directions: Array[Vector2] = [
 ]
 #explosão seu tamanho e direção
 
-var size = 1
+var size = 4
 
 func _ready() -> void:
 	check_raycasts()
