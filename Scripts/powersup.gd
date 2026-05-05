@@ -6,6 +6,6 @@ class_name PowerUp
 
 var type: Utils.PowerUpType
 
-func init(power_up_res: Powerupres):
+func init(power_up_res: PowerUpres):
 	sprite_2d.texture = power_up_res.texture
 	type = power_up_res.type

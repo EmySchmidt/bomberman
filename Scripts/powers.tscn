@@ -1,13 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwo4qwdxkge3s"]
 
-[ext_resource type="Script" uid="uid://2rvv0705xjdy" path="res://Scripts/powers.gd" id="1_k6ipk"]
 [ext_resource type="Texture2D" uid="uid://jyralsl4bgi0" path="res://Assets/PowerUpBombUp.png" id="2_js525"]
+
+[sub_resource type="GDScript" id="GDScript_b83ql"]
+script/source = "extends Area2D
+
+class_name PowerUp
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+var type: Utils.PowerUpType
+
+func init(power_up_res: Powerupres):
+	sprite_2d.texture = power_up_res.texture
+	type = power_up_res.type
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx11r"]
 size = Vector2(16, 16)
 
 [node name="POWERS" type="Area2D"]
-script = ExtResource("1_k6ipk")
+script = SubResource("GDScript_b83ql")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_js525")
